@@ -3,7 +3,7 @@
 import { useGetDataQuery } from "@/app/redux/Rtk";
 import { useState, useMemo } from "react";
 import { Slider } from "antd";
-import MainByCategory from "./MainByCategory";
+import MainByCategory from "./ListHost";
 
 export default function Main() {
     const [selectedCategory, setSelectedCategory] = useState("house-plants");

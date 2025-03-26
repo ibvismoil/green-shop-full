@@ -59,7 +59,7 @@ const HeroCarousel = () => {
                 {slides.map((slide, index) => (
                     <button
                         key={slide.id}
-                        className={`relative cursor-pointer transition-all duration-300 bg-[#46A358] rounded-full !h-[6px] !w-[6px] ${currentSlide === index ? "!w-6" : "!w-4 hover:bg-[#46A358]/70 bg-[#46A358]/40"}`}
+                        className={`relative cursor-pointer transition-all duration-300 bg-[#46A358] rounded-full !h-[6px] !w-[6px] ${currentSlide === index ? "!w-6" : "!h-6 hover:bg-[#46A358]/70 bg-[#46A358]/40"}`}
                         onClick={() => carouselRef.current?.goTo(index)}
                     />
                 ))}
