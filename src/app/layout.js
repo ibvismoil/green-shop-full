@@ -16,8 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "GreenShop | Jonli gullar va uy o‘simliklari do‘koni",
-  description: "GreenShop – sifatli gul va o‘simliklar do‘koni! 🌿 Atirgullar, kaktuslar, орхидея...",
+  title: "GreenShop | All types of flowers are in your device.",
   icons: {
     icon: "/images/favicon.svg",
   },
