@@ -84,38 +84,40 @@ export default function Modal({ onClose, setUser }) {
                     transition={{ duration: 0.3 }}
                     className="bg-white p-6 rounded-lg shadow-lg w-96 relative"
                 >
-                    <button onClick={onClose} className="absolute top-4 right-4 text-gray-500">✖</button>
+                    <button onClick={onClose} className="absolute top-4 right-4 text-gray-500 cursor-pointer">✖</button>
                     <h2 className="text-lg font-bold mb-4">{isLogin ? "Login" : "Register"}</h2>
                     {errors.form && <p className="text-red-500 mb-2">{errors.form}</p>}
 
                     {!isLogin && (
                         <>
-                            <input type="text" name="name" placeholder="Имя" className="w-full p-2 mb-2 border" onChange={handleInputChange} />
+                            <input type="text" name="name" placeholder="Имя" className="w-full p-2 mb-2 border rounded" onChange={handleInputChange} />
                             {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
-                            <input type="text" name="surname" placeholder="Фамилия" className="w-full p-2 mb-2 border" onChange={handleInputChange} />
+                            <input type="text" name="surname" placeholder="Фамилия" className="w-full p-2 mb-2 border rounded" onChange={handleInputChange} />
                             {errors.surname && <p className="text-red-500 text-sm">{errors.surname}</p>}
                         </>
                     )}
 
-                    <input type="email" name="email" placeholder="Email" className="w-full p-2 mb-2 border" onChange={handleInputChange} />
+                    <input type="email" name="email" placeholder="Email" className="w-full p-2 mb-2 border rounded" onChange={handleInputChange} />
                     {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
-                    <input type="password" name="password" placeholder="Пароль" className="w-full p-2 mb-2 border" onChange={handleInputChange} />
+                    <input type="password" name="password" placeholder="Пароль" className="w-full p-2 mb-2 border rounded" onChange={handleInputChange} />
                     {errors.password && <p className="text-red-500 text-sm">{errors.password}</p>}
+                    {errors.confirmPassword && <p className="text-red-500 text-sm">{errors.confirmPassword}</p>}
+
 
                     {!isLogin && (
                         <>
-                            <input type="password" name="confirmPassword" placeholder="Повторите пароль" className="w-full p-2 mb-4 border" onChange={handleInputChange} />
+                            <input type="password" name="confirmPassword" placeholder="Повторите пароль" className="w-full p-2 mb-4 border rounded" onChange={handleInputChange} />
                             {errors.confirmPassword && <p className="text-red-500 text-sm">{errors.confirmPassword}</p>}
                         </>
                     )}
 
-                    <button onClick={handleSubmit} className="bg-green-500 text-white px-4 py-2 rounded w-full">
+                    <button onClick={handleSubmit} className="bg-green-500 text-white px-4 py-2 rounded rounded w-full cursor-pointer">
                         {isLogin ? "Login" : "Register"}
                     </button>
                     <p className="mt-4 text-center">
-                        {isLogin ? "Нет аккаунта?" : "Уже есть аккаунт?"} 
-                        <button onClick={() => setIsLogin(!isLogin)} className="text-blue-500">
-                            {isLogin ? "Зарегистрируйтесь" : "Войти"}
+                        {isLogin ? "Don't have an account?" : "Already have an account?"} 
+                        <button onClick={() => setIsLogin(!isLogin)} className="text-blue-500 cursor-pointer">
+                            {isLogin ? "Register" : "Login"}
                         </button>
                     </p>
                 </motion.div>
