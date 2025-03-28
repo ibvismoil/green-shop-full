@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { LogIn, Search, ShoppingCart, Heart } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import Modal from "./pages/Modal"; // Импортируем модальное окно
+import Modal from "./pages/Modal"; 
 
 export default function Header() {
     const [user, setUser] = useState(null);
@@ -42,7 +42,7 @@ export default function Header() {
                         {user ? (
                             <div className="flex items-center gap-4">
                                 <span>{user.name || user.email}</span>
-                                <button onClick={handleLogout} className="text-red-500">Logout</button>
+                                <button onClick={handleLogout} className="bg-red-500 cursor-pointer text-white px-4 py-2 rounded-md flex items-center ">Logout</button>
                             </div>
                         ) : (
                             <button
@@ -56,7 +56,6 @@ export default function Header() {
                 </div>
             </nav>
 
-            {/* Модальное окно */}
             {isModalOpen && <Modal onClose={() => setIsModalOpen(false)} setUser={setUser} />}
         </>
     );
